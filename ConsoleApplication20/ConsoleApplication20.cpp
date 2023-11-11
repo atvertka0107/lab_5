@@ -10,7 +10,8 @@
 //В случае некорректного ввода данных, функция отслеживает нажатие клавиши ESC, для 
 //завершения работы программы.
 
-void getData(unsigned& n) {
+void getData(unsigned& n)
+{
 
     std::cout << "Введите размер матрицы...\n";
     std::cin >> n;
@@ -26,13 +27,14 @@ void getData(unsigned& n) {
 
         case 27:
 
-            std::cout << "\033[2J\033[1;1H" << "Завершение работы.";
+            system("cls");
+            std::cout << "Завершение работы.";
             exit(0);
             break;
 
         default:
             
-            std::cout << "\033[2J\033[1;1H";
+            system("cls");
             std::cin.clear();
             std::cin.ignore(1000, '\n');
             getData(n);
@@ -84,6 +86,7 @@ int main()
         }
         std::cout << std::endl;
     }
-    
+    std::cout << std::endl;
+    system("pause");
     return 0;
 }
